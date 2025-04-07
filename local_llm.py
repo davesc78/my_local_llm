@@ -8,6 +8,9 @@ from transformers import BitsAndBytesConfig
 
 model_id = "meta-llama/Llama-3.2-3B-Instruct"
 # model_id = "meta-llama/Llama-3.2-1B-Instruct"
+### Probar con microsoft/Phi-3-medium-4k-instruct  
+
+
 
 
 tokenizer = AutoTokenizer.from_pretrained(model_id)
