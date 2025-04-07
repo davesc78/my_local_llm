@@ -72,3 +72,4 @@ def ask(user_q):
 
 ask("Hola, soy de Chile, y quiero saber como es el clima en mi país.")
 ask("¿Sabes qué es ChileCompra")
+ask('Si yo vendo pan amasado, ¿Me conviene ofertar a una licitación de pan para la municiaplidad de Santiago?')
