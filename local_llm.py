@@ -1,4 +1,4 @@
-# !pip install bitsandbytes
+# !pip install bitsandbytes -qqq
 
 
 import torch
@@ -19,6 +19,7 @@ tokenizer.pad_token_id = tokenizer.eos_token_id
 quant_config = BitsAndBytesConfig(
     load_in_4bit=True,  # Enable 4-bit quantization
     bnb_4bit_compute_dtype=torch.bfloat16,  # Match compute type to input
+    bnb_4bit_quant_dtype="nf4",
 )
 
 
@@ -38,22 +39,22 @@ pipe = pipeline(
 )
 
 
-messages = [
-    {
-        "role": "system",
-        "content": "You are a pirate chatbot who always responds in pirate speak!",
-    },
-    {"role": "user", "content": "Who are you?"},
-]
+# messages = [
+#     {
+#         "role": "system",
+#         "content": "You are a pirate chatbot who always responds in pirate speak!",
+#     },
+#     {"role": "user", "content": "Who are you?"},
+# ]
 
 
-outputs = pipe(
-    messages,
-    max_new_tokens=64,
-)
-print(outputs[0]["generated_text"][-1])
+# outputs = pipe(
+#     messages,
+#     max_new_tokens=64,
+# )
+# print(outputs[0]["generated_text"][-1])
 
-outputs
+# outputs
 
 
 def ask(user_q):
